@@ -4,10 +4,17 @@
 
 # Contributing 
 - Contributions for various other dev tools are welcomed!
-- Make sure to follow the [Code of Conduct]()
+- Make sure to follow the [Code of Conduct](https://github.com/gaurishhs/starters/blob/main/CODE_OF_CONDUCT.md)
 
 # Currently Supported Tools
 - *Coming Soon*
 
 # Contributors 
-- *Coming Soon*
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
