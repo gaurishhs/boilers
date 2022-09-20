@@ -16,6 +16,16 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+// Parameters
+app.get("/hello/:name", (req, res) => {
+  res.send("Hello " + req.params.name);
+})
+
+// Query Parameters
+app.get("/hello", (req, res) => {
+  res.send("Hello " + req.query.name);
+})
+
 // Start the server
 app.listen(port, () => {
   console.log("Server started on port " + port);

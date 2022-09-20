@@ -16,6 +16,16 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello World!" });
 });
 
+// Parameters
+app.get("/hello/:name", (req, res) => {
+  res.json({ message: `Hello ${req.params.name}` });
+});
+
+// Query Parameters
+app.get("/hello", (req, res) => {
+  res.json({ message: `Hello ${req.query.name}` });
+})
+
 // Start server
 app.listen(port, () => {
   console.log("Express Server listening on " + port);
