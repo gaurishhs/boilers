@@ -10,6 +10,7 @@
 
 import express from 'express';
 import { exampleMiddleware } from './middlewares';
+import rateLimit from 'express-rate-limit'
 var port = process.env.PORT || 3000;
 import router from './router';
 
@@ -17,6 +18,16 @@ import router from './router';
 // Create Express Application
 const app = express();
 
+// Initialize rate limiter
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // limit each IP to 100 requests per windowMs
+});
+
+// Apply to all requests
+app.use(limiter);
+
+// Add middleware
 app.use(exampleMiddleware)
 
 // Add routes

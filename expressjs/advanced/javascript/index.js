@@ -14,10 +14,21 @@ const exampleMiddleware = require('./middlewares/example-middleware');
 
 // Import the express module
 const express = require("express");
+const { rateLimit } = require('express-rate-limit');
 var port = process.env.PORT || 3000;
 
 // Create an express application
 const app = express();
+
+// Initialize Ratelimiter
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    delayMs: 0 // disable delaying - full speed until the max limit is reached
+});
+
+// Apply to all requests
+app.use(limiter);
 
 // Use Router
 app.use(router);
